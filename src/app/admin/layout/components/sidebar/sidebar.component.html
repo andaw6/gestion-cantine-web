@@ -1,0 +1,64 @@
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex justify-between items-center p-4 border-b overflow-hidden">
+    <div class="flex items-center gap-3">
+        <img src="{{appLogo}}" alt="Chili POS" class="w-10 h-10 object-contain" />
+        <span class="font-bold text-xl text-gray-800">{{appName}}</span>
+    </div>
+    <button class="p-2 rounded-lg hover:bg-gray-100 transition-all duration-200" (click)="toggleSidebar()">
+        <span class="material-icons text-gray-600">menu</span>
+    </button>
+</div>
+
+<!-- Sidebar Content -->
+<div class="md:block h-max sm:h-full" [class.hidden]="!isSidebarOpen">
+    <div class="flex flex-col h-max sm:h-full p-6 overflow-hidden">
+        <!-- Logo -->
+        <div class="hidden md:flex items-center gap-3 mb-8">
+            <img src="{{appLogo}}" alt="{{appName}}" class="w-12 h-12 object-contain" />
+            <div>
+                <span class="font-bold text-xl text-gray-800">{{appName}}</span>
+                <p class="text-sm text-gray-500">Point de Restauration</p>
+            </div>
+        </div>
+
+
+        <nav class="space-y-2 flex-1">
+            <button (click)="setActive(navItems[0])" [routerLink]="[navItems[0].link]"
+                class="w-full flex items-center gap-3 bg-green-600 hover:bg-green-700 p-4 rounded-lg text-white font-medium shadow-sm transition-all duration-200 group">
+                <span
+                    class="material-icons text-xl group-hover:scale-110 transition-transform">{{navItems[0].icon}}</span>
+                <span>{{navItems[0].name}}</span>
+            </button>
+
+            <div class="py-4 overflow-hidden">
+                <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Navigation</p>
+                <div class="space-y-1">
+                    <button *ngFor="let item of navItems.slice(1)" [routerLink]="item.link"
+                        class="w-full flex items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-all duration-200 border-b"
+                        [class.bg-gray-50]="item.active" [class.text-green-600]="item.active"
+                        [class.font-medium]="item.active" (click)="setActive(item)">
+                        <span class="material-icons text-xl">{{item.icon}}</span>
+                        <span>{{item.name}}</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- User Profile & Logout -->
+        <div class="pt-4 overflow-hidden">
+            <div class="flex items-center gap-3 mb-4 p-2">
+                <img src="{{user.avatar}}" alt="User" class="w-10 h-10 rounded-full" />
+                <div>
+                    <p class="font-medium text-gray-800">{{user.name}}</p>
+                    <p class="text-sm text-gray-500">Administrator</p>
+                </div>
+            </div>
+            <button [routerLink]="['/']"
+                class="w-full flex items-center gap-3 p-4 rounded-xl border-y hover:bg-red-50 text-red-600 transition-all duration-200">
+                <span class="material-icons text-xl">logout</span>
+                <span>Déconnexion</span>
+            </button>
+        </div>
+    </div>
+</div>

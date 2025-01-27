@@ -1,0 +1,701 @@
+{
+  "plats": [
+    {
+      "id": "1",
+      "name": "Thieboudienne",
+      "description": "Plat national sénégalais à base de riz, de poisson, et de légumes.",
+      "price": 1500,
+      "category": 6,
+      "status": "REGULAR",
+      "ingredients": [
+        "Riz",
+        "Poisson",
+        "Carottes",
+        "Chou",
+        "Aubergine",
+        "Gombo"
+      ],
+      "allergens": [
+        "Poisson"
+      ],
+      "available": true,
+      "imageUrl": "https://www.mesepices.com/_i/48378/5406/865/10/thieboudienne.jpeg",
+      "type": "Non-Vegetarian",
+      "date": "2025-01-15"
+    },
+    {
+      "id": "2",
+      "name": "Yassa Poulet",
+      "description": "Poulet mariné dans une sauce citronnée avec des oignons, servi avec du riz. ",
+      "price": 4500,
+      "category": 6,
+      "status": "REGULAR",
+      "available": true,
+      "imageUrl": "https://media.istockphoto.com/id/481111328/photo/poulet-yassa-s%C3%A3n%C3%A3galais.jpg?s=612x612&w=0&k=20&c=Jrvsh5uWB5y-DhU-6Cclmc8ujqJunxQlD9JU46JPNAQ=",
+      "type": "Non-Vegetarian",
+      "date": "2025-01-16T00:00:00.000Z",
+      "ingredients": [
+        "Poulet",
+        "Riz",
+        "Oignons",
+        "Citron",
+        "Poivre"
+      ],
+      "allergens": [
+        "Poulet"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Bissap",
+      "description": "Boisson traditionnelle sucrée à base de fleurs d’hibiscus.",
+      "price": 1000,
+      "category": 5,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "Fleurs d’hibiscus",
+        "Sucre",
+        "Menthe"
+      ],
+      "available": true,
+      "imageUrl": "https://st2.depositphotos.com/1003648/9009/i/450/depositphotos_90092466-stock-photo-hibiscus-tea-flower-and-dry.jpg",
+      "date": "2025-01-18"
+    },
+    {
+      "id": "5",
+      "name": "Café Touba",
+      "description": "Café sénégalais parfumé aux grains de poivre de Guinée.",
+      "price": 1500,
+      "category": 7,
+      "status": "REGULAR",
+      "ingredients": [
+        "Café",
+        "Poivre de Guinée"
+      ],
+      "available": true,
+      "imageUrl": "https://ileauxepices.com/blog/wp-content/uploads/2016/05/caf%C3%A9-touba.jpg",
+      "date": "2025-01-19"
+    },
+    {
+      "id": "6",
+      "name": "Bouye",
+      "description": "Jus de fruit de baobab légèrement sucré.",
+      "price": 1500,
+      "category": 5,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "Fruit de baobab",
+        "Sucre",
+        "Eau"
+      ],
+      "available": true,
+      "type": "Vegetarian",
+      "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/28/3c/83/d0/jus-coco-bouye-decouvrez.jpg",
+      "date": "2025-01-22"
+    },
+    {
+      "id": "7",
+      "name": "Thiakry",
+      "description": "Dessert sucré à base de mil et de yaourt.",
+      "price": 2000,
+      "category": 2,
+      "status": "REGULAR",
+      "ingredients": [
+        "Mil",
+        "Yaourt",
+        "Sucre"
+      ],
+      "allergens": [
+        "Lait"
+      ],
+      "available": true,
+      "type": "Vegetarian",
+      "imageUrl": "https://tabanani.ca/wp-content/uploads/2023/10/Thiakry.jpg",
+      "date": "2025-01-20"
+    },
+    {
+      "id": "8",
+      "name": "Domoda",
+      "description": "Ragoût acidulé à base de pâte de tomate et citron, servi avec du riz. ",
+      "price": 3000,
+      "category": 6,
+      "status": "REGULAR",
+      "available": true,
+      "imageUrl": "https://lacuisinededaba.wordpress.com/wp-content/uploads/2015/01/image18.jpg",
+      "type": "Non-Vegetarian",
+      "date": "2025-01-23T00:00:00.000Z",
+      "ingredients": [
+        "Riz",
+        "Tomate",
+        "Citron",
+        "Viande ou poisson"
+      ],
+      "allergens": [
+        "Poisson (selon la préparation)"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Ngalakh",
+      "description": "Mélange sucré de pâte d’arachide, de pain de singe, et de mil.",
+      "price": 1700,
+      "category": 2,
+      "status": "DAILY_MENU",
+      "available": true,
+      "imageUrl": "https://i.ytimg.com/vi/xU2OoJC2US0/maxresdefault.jpg",
+      "type": "Vegetarian",
+      "date": "2025-01-24T00:00:00.000Z",
+      "ingredients": [
+        "Arachide",
+        "Baobab",
+        "Mil",
+        "Sucre"
+      ],
+      "allergens": [
+        "Arachide"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Jus de Tamarin",
+      "description": "Boisson acidulée à base de tamarin, très désaltérante.",
+      "price": 1500,
+      "category": 5,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "Tamarin",
+        "Sucre",
+        "Eau"
+      ],
+      "available": true,
+      "imageUrl": "https://st2.depositphotos.com/6922808/10032/i/450/depositphotos_100322134-stock-photo-tamarind-juice-in-a-glass.jpg",
+      "type": "Vegetarian",
+      "date": "2025-01-25"
+    },
+    {
+      "id": "11",
+      "name": "Soupe de Poisson",
+      "description": "Une soupe légère et parfumée, préparée avec du poisson frais, des légumes, et des épices locales.",
+      "price": 5500,
+      "category": 1,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "Poisson",
+        "Tomate",
+        "Oignons",
+        "Épices"
+      ],
+      "allergens": [
+        "Poisson"
+      ],
+      "available": true,
+      "imageUrl": "https://i.ytimg.com/vi/iYSok2IJEnY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD_COijlA0vIWKBmrFJ803vDm-RAA",
+      "type": "Non-Vegetarian",
+      "date": "2025-01-26"
+    },
+    {
+      "id": "12",
+      "name": "Mafé",
+      "description": "Ragoût épais à base de pâte d’arachide, servi avec du riz et de la viande.",
+      "price": 4700,
+      "category": 6,
+      "status": "REGULAR",
+      "ingredients": [
+        "Riz",
+        "Arachide",
+        "Viande",
+        "Tomates"
+      ],
+      "allergens": [
+        "Arachide"
+      ],
+      "available": true,
+      "imageUrl": "https://www.au-senegal.com/local/cache-vignettes/L674xH533/mafe-2-527fd.jpg?1727134259",
+      "type": "Non-Vegetarian",
+      "date": "2025-01-27"
+    },
+    {
+      "id": "13",
+      "name": "Beignets",
+      "description": "Beignets traditionnels sénégalais, sucrés et moelleux, parfaits pour le goûter.",
+      "price": 500,
+      "category": 2,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "Farine",
+        "Sucre",
+        "Huile"
+      ],
+      "allergens": [],
+      "available": true,
+      "type": "Non-Vegetarian",
+      "imageUrl": "https://www.jocooks.com/wp-content/uploads/2019/06/beignets-1-23.jpg",
+      "date": "2025-01-28"
+    },
+    {
+      "id": "14",
+      "name": "Jus de Gingembre",
+      "description": "Boisson rafraîchissante avec une pointe épicée, préparée à base de gingembre frais.",
+      "price": 1200,
+      "category": 5,
+      "status": "REGULAR",
+      "ingredients": [
+        "Gingembre",
+        "Sucre",
+        "Eau"
+      ],
+      "allergens": [],
+      "available": true,
+      "imageUrl": "https://img.cuisineaz.com/660x660/2018/11/17/i144267-jus-de-gingembre.jpeg",
+      "type": "Vegetarian",
+      "date": "2025-01-29"
+    },
+    {
+      "id": "15",
+      "name": "Salade de Bissap",
+      "description": "Salade fraîche composée de fleurs d’hibiscus, de fruits, et d’épices légères.",
+      "price": 2000,
+      "category": 1,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "Fleurs d'hibiscus",
+        "Mangue",
+        "Menthe",
+        "Sucre"
+      ],
+      "allergens": [],
+      "available": true,
+      "imageUrl": "https://cdn.aistoucuisine.com/assets/4ded5137-c017-4563-9f62-b332697d11e9/salade-riz-bissap-2.jpg.webp?format=webp&quality=75&width=1536",
+      "type": "Vegetarian",
+      "date": "2025-02-01"
+    },
+    {
+      "id": "16",
+      "name": "Poisson Grillé",
+      "description": "Poisson frais grillé à la perfection, servi avec des légumes et du riz.",
+      "price": 6000,
+      "category": 1,
+      "status": "REGULAR",
+      "ingredients": [
+        "Poisson",
+        "Riz",
+        "Légumes",
+        "Épices"
+      ],
+      "allergens": [
+        "Poisson"
+      ],
+      "available": true,
+      "imageUrl": "https://m1.zeste.ca/serdy-m-dia-inc/image/upload/f_auto/fl_lossy/q_auto:eco/x_0,y_0,w_1279,h_720,c_crop/w_1200,h_630,c_fill/v1507089992/foodlavie/prod/recettes/poissons-grilles-style-romain-5ffb2906",
+      "type": "Non-Vegetarian",
+      "date": "2025-02-02"
+    },
+    {
+      "id": "17",
+      "name": "Fried Plantains",
+      "description": "Banane plantain frite, un accompagnement sucré-salé délicieux. ",
+      "price": 1500,
+      "category": 3,
+      "status": "REGULAR",
+      "available": true,
+      "imageUrl": "https://t4.ftcdn.net/jpg/08/68/03/59/360_F_868035942_qyHHPVuE9CKc8W1hHe9sKtJxwGgbmRi8.jpg",
+      "type": "Vegetarian",
+      "date": "2025-02-03T00:00:00.000Z",
+      "ingredients": [
+        "Banane plantain",
+        "Huile",
+        "Sel"
+      ],
+      "allergens": []
+    },
+    {
+      "id": "18",
+      "name": "Ragoût de Veau",
+      "description": "Un ragoût savoureux à base de veau, légumes et épices.",
+      "price": 5500,
+      "category": 1,
+      "status": "REGULAR",
+      "ingredients": [
+        "Veau",
+        "Tomate",
+        "Carottes",
+        "Épices"
+      ],
+      "allergens": [],
+      "available": true,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZgexDlJEmTuy2P0zo8OjSSxFyvbmeas-QKA&s",
+      "type": "Non-Vegetarian",
+      "date": "2025-02-05"
+    },
+    {
+      "id": "19",
+      "name": "Spaghetti Bolognaise",
+      "description": "Pâtes spaghetti accompagnées d'une sauce bolognaise riche à base de viande hachée, tomates, et épices.",
+      "price": 12.5,
+      "category": 1,
+      "status": "REGULAR",
+      "ingredients": [
+        "spaghetti",
+        "viande hachée",
+        "tomates",
+        "oignons",
+        "ail",
+        "huile d'olive",
+        "épices"
+      ],
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "available": true,
+      "imageUrl": "https://img.taste.com.au/PXvnKf8Y/taste/2016/11/spaghetti-bolognaise-104579-1.jpeg",
+      "type": "Non-Vegetarian"
+    },
+    {
+      "id": "20",
+      "name": "Salade César",
+      "description": "Salade fraîche avec laitue, poulet grillé, croûtons, et sauce César crémeuse.",
+      "price": 10,
+      "category": 2,
+      "status": "REGULAR",
+      "ingredients": [
+        "laitue",
+        "poulet grillé",
+        "croûtons",
+        "fromage parmesan",
+        "sauce César"
+      ],
+      "allergens": [
+        "gluten",
+        "lait",
+        "œufs"
+      ],
+      "available": true,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjXAPkVphJtWgsazt0Bq32tWIl56jteAw_ig&s",
+      "type": "Non-Vegetarian"
+    },
+    {
+      "id": "21",
+      "name": "Tarte Tatin",
+      "description": "Tarte renversée aux pommes caramélisées avec une pâte feuilletée légère.",
+      "price": 7.5,
+      "category": 3,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "pommes",
+        "sucre",
+        "beurre",
+        "pâte feuilletée"
+      ],
+      "allergens": [
+        "gluten",
+        "lait"
+      ],
+      "available": true,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmY0GG1hGVFfOIyicTPM4jTczVff3vSGkY5w&s",
+      "type": "Vegetarian"
+    },
+    {
+      "id": "22",
+      "name": "Café Latte",
+      "description": "Café espresso mélangé à du lait chaud, crémeux et doux.",
+      "price": 3.5,
+      "category": 4,
+      "status": "REGULAR",
+      "ingredients": [
+        "café espresso",
+        "lait"
+      ],
+      "allergens": [
+        "lait"
+      ],
+      "available": true,
+      "imageUrl": "https://img.freepik.com/photos-gratuite/delicieuse-tasse-cafe-qualite_23-2150691369.jpg?semt=ais_hybrid",
+      "type": "Non-Vegetarian"
+    },
+    {
+      "id": "23",
+      "name": "Jus de Mangue",
+      "description": "Jus frais et sucré de mangue, pressé et naturel.",
+      "price": 4,
+      "category": 5,
+      "status": "DAILY_MENU",
+      "ingredients": [
+        "mangue",
+        "sucre"
+      ],
+      "allergens": [],
+      "available": true,
+      "imageUrl": "https://c8.alamy.com/compfr/2cfr8db/verre-de-jus-de-mangue-eclaboussant-avec-fruits-de-mangue-sur-blanc-arriere-plan-2cfr8db.jpg",
+      "type": "Vegetarian"
+    },
+    {
+      "id": "24",
+      "name": "Couscous aux légumes",
+      "description": "Couscous accompagné d'un mélange de légumes sautés et d'épices marocaines.",
+      "price": 11,
+      "category": 6,
+      "status": "REGULAR",
+      "ingredients": [
+        "couscous",
+        "carottes",
+        "courgettes",
+        "poivrons",
+        "épices marocaines",
+        "huile d'olive"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "available": true,
+      "imageUrl": "https://www.becel.com/fr-be/-/media/Project/Upfield/Brands/Becel-NL/Becel-BE/Assets/Recipes/266e04ee-9818-44c6-8ea6-96edf4c4f821.jpg?rev=a957365268eb47d68906ecee0adecfca&w=900",
+      "type": "Vegetarian"
+    },
+    {
+      "id": "25",
+      "name": "Spaghetti Carbonara",
+      "description": "Pâtes spaghetti enrobées d'une sauce crémeuse à base d'œufs, de fromage, de pancetta et de poivre noir",
+      "price": 3000,
+      "category": 1,
+      "status": "DAILY",
+      "available": true,
+      "imageUrl": "https://www.marthastewart.com/thmb/S9xVtnWSHldvxPHKOxEq0bALG-k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MSL-338686-spaghetti-carbonara-hero-3x2-69999-560b45d1dd9f4741b717176eff024839.jpeg",
+      "type": "Non-Vegetarian",
+      "date": "2025-01-23T00:00:00.000Z",
+      "ingredients": [
+        "spaghetti",
+        "œufs",
+        "œufs",
+        "Pecorino",
+        "pancetta",
+        "poivre noir",
+        "sel"
+      ],
+      "allergens": [
+        "gluten",
+        "lait",
+        "œufs"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Spaghetti Carbonara",
+      "description": "Pâtes spaghetti enrobées d'une sauce crémeuse à base d'œufs, de fromage, de pancetta et de poivre noir",
+      "price": 3000,
+      "category": 1,
+      "status": "REGULAR",
+      "available": true,
+      "imageUrl": "https://www.marthastewart.com/thmb/S9xVtnWSHldvxPHKOxEq0bALG-k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MSL-338686-spaghetti-carbonara-hero-3x2-69999-560b45d1dd9f4741b717176eff024839.jpeg",
+      "type": "Non-Vegetarian",
+      "date": null,
+      "ingredients": [
+        "spaghetti",
+        "œufs",
+        "œufs",
+        "Pecorino",
+        "pancetta",
+        "poivre noir",
+        "sel"
+      ],
+      "allergens": [
+        "gluten",
+        "lait",
+        "œufs"
+      ],
+      "availlable": false
+    }
+  ],
+  "categorie": [
+    {
+      "id": "6",
+      "name": "Plats traditionnels",
+      "type": "FOOD"
+    },
+    {
+      "id": "1",
+      "name": "Plats occidentaux",
+      "type": "FOOD"
+    },
+    {
+      "id": "2",
+      "name": "Accompagnements",
+      "type": "FOOD"
+    },
+    {
+      "id": "3",
+      "name": "Desserts",
+      "type": "FOOD"
+    },
+    {
+      "id": "4",
+      "name": "Boissons",
+      "type": "DRINK"
+    },
+    {
+      "id": "5",
+      "name": "Jus locaux",
+      "type": "DRINK"
+    },
+    {
+      "id": "7",
+      "name": "Cafés et infusions",
+      "type": "DRINK"
+    },
+    {
+      "id": "8",
+      "name": "Jus naturels",
+      "type": "DRINK"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Cheikh Ndiaye",
+      "email": "cheikh.ndiaye@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "2",
+      "name": "Awa Diop",
+      "email": "awa.diop@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "3",
+      "name": "Mamadou Fall",
+      "email": "mamadou.fall@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "4",
+      "name": "Fatou Bâ",
+      "email": "fatou.ba@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "5",
+      "name": "Oumar Kane",
+      "email": "oumar.kane@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "6",
+      "name": "Astou Sy",
+      "email": "astou.sy@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "7",
+      "name": "Adama Diallo",
+      "email": "adama.diallo@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "8",
+      "name": "Seynabou Thiam",
+      "email": "seynabou.thiam@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "9",
+      "name": "Modou Gueye",
+      "email": "modou.gueye@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "10",
+      "name": "Khadija Sow",
+      "email": "khadija.sow@example.sn",
+      "role": "CLIENT"
+    },
+    {
+      "id": "11",
+      "name": "Elage Ciss",
+      "email": "elage.ciss@example.sn",
+      "role": "ADMIN"
+    }
+  ],
+  "commandes": [
+    {
+      "id": "1",
+      "clientId": 1,
+      "date": "2025-01-20",
+      "total": 12000,
+      "status": "NEW",
+      "dishes": [
+        {
+          "id": 1,
+          "quantity": 2
+        },
+        {
+          "id": 3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "clientId": 2,
+      "date": "2025-01-21",
+      "total": 8500,
+      "status": "DONE",
+      "dishes": [
+        {
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "clientId": 3,
+      "date": "2025-01-22",
+      "total": 15000,
+      "status": "PROGRESS",
+      "dishes": [
+        {
+          "id": 1,
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "clientId": 4,
+      "date": "2025-01-23",
+      "total": 10000,
+      "status": "CANCELLED",
+      "dishes": [
+        {
+          "id": 6,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "clientId": 5,
+      "date": "2025-01-24",
+      "total": 7000,
+      "status": "NEW",
+      "dishes": [
+        {
+          "id": 2,
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}

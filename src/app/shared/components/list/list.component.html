@@ -1,0 +1,33 @@
+<table class="w-full whitespace-nowrap">
+    <!-- En-tête paramétrable -->
+    <thead>
+        <tr class="bg-gray-100 text-gray-600 font-medium text-sm uppercase tracking-wide">
+            <ng-container *ngFor="let header of headers">
+                <th class="px-4 py-3 text-left">{{ header }}</th>
+            </ng-container>
+        </tr>
+    </thead>
+
+    <!-- Corps paramétrable -->
+    <tbody class="divide-y divide-gray-200">
+        <tr *ngFor="let row of data" class="hover:bg-gray-50 transition">
+            <ng-container *ngFor="let column of columns">
+                <td class="px-4 py-4 text-gray-600">
+                    <ng-container
+                        *ngTemplateOutlet="templates[column] || defaultTemplate; context: { $implicit: row[column] }">
+                    </ng-container>
+                </td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Template par défaut (si aucun n'est fourni pour une colonne) -->
+<ng-template #defaultTemplate let-value>
+
+        <!-- <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+            {{ value }}
+        </span> -->
+
+        {{ value }}
+</ng-template>

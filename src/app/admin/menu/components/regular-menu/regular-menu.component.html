@@ -1,0 +1,28 @@
+<app-menu-type-selector class="mt-2" [dishType]="selectedDishType"
+    (dishTypeEmiter)="onSelectedDishType($event)"></app-menu-type-selector>
+
+<!-- Filtres par catégorie -->
+<div class="bg-white rounded-xl shadow p-4">
+    <div class="flex flex-wrap gap-4">
+        <button (click)="selectCategory('Tous')" [class.bg-green-600]="selectedCategory === 'Tous'" [class.text-white]="selectedCategory === 'Tous'"
+            class="px-4 py-2 rounded-lg transition-colors hover:bg-green-700 hover:text-white">
+            Tous
+        </button>
+        <ng-container *ngFor="let category of categories">
+            <button *ngIf="category.type === selectedDishType" (click)="selectCategory(category.name)"
+                [class.bg-green-600]="selectedCategory === category.name"
+                [class.text-white]="selectedCategory === category.name"
+                class="px-4 py-2 rounded-lg transition-colors hover:bg-green-700 hover:text-white">
+                {{ category.name }}
+            </button>
+        </ng-container>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-5">
+        <app-dish-card *ngFor="let item of getDishes" [item]="item" (edit)="onEditDish.emit($event)"
+            (delete)="onDeleteDish.emit($event)" (toggleDaily)="onShowDetail.emit($event)">
+        </app-dish-card>
+    </div>
+</div>

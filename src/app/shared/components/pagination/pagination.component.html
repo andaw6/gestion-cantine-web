@@ -1,0 +1,115 @@
+<div class="px-6 py-4 bg-gray-50 border-t border-gray-200">
+    <div class="flex items-center justify-between space-x-6">
+      <!-- Informations de pagination -->
+      <div class="flex items-center space-x-4">
+        <div class="text-sm text-gray-500">
+          <span class="font-semibold text-gray-700">{{ resultsPerPage }}</span> résultats par page
+        </div>
+        <div class="h-5 w-px bg-gray-300"></div>
+        <div class="text-sm text-gray-500">
+          Page
+          <span class="font-semibold text-green-600">{{ currentPage }}</span>
+          sur
+          <span class="text-gray-700">{{ totalPages }}</span>
+        </div>
+      </div>
+  
+      <!-- Contrôles de pagination -->
+      <div class="flex items-center space-x-2">
+        <!-- Précédent -->
+        <button
+          (click)="goToPreviousPage()"
+          [disabled]="currentPage === 1"
+          class="group flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-500 hover:bg-green-50 hover:text-green-600 hover:border-green-300 transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+  
+        <!-- Pages dynamiques -->
+        <div class="flex space-x-1">
+          <button
+            *ngFor="let page of visiblePages"
+            (click)="goToPage(page)"
+            [disabled]="page === -1"
+            [class.bg-green-600]="page === currentPage"
+            [class.text-white]="page === currentPage"
+            [class.bg-white]="page !== currentPage"
+            [class.text-gray-600]="page !== currentPage"
+            [class.border-gray-200]="page !== currentPage"
+            [class.hover\\:bg-green-50]="page !== currentPage"
+            class="w-10 h-10 rounded-full font-semibold shadow-md transition-all duration-300"
+          >
+            {{ page === -1 ? '...' : page }}
+          </button>
+        </div>
+  
+        <!-- Suivant -->
+        <button
+          (click)="goToNextPage()"
+          [disabled]="currentPage === totalPages"
+          class="group flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-500 hover:bg-green-50 hover:text-green-600 hover:border-green-300 transition-all duration-300 ease-in-out"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <div class="flex items-center space-x-6">
+            <!-- Sélection pour le nombre d'items par page -->
+            <div class="flex items-center space-x-3">
+              <label class="text-sm text-gray-500">Afficher</label>
+              <div class="relative">
+                <select
+                  [(ngModel)]="resultsPerPage"
+                  (change)="updateResultsPerPage()"
+                  class="appearance-none w-20 pl-3 pr-8 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
+                >
+                  <option *ngFor="let count of [5, 10, 20, 50, 100]" [value]="count">
+                    {{ count }}
+                  </option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </div>
+              </div>
+              <label class="text-sm text-gray-500">par page</label>
+            </div>
+          
+            <!-- Aller à une page spécifique -->
+            <div class="flex items-center space-x-3">
+              <label class="text-sm text-gray-500">Aller à</label>
+              <div class="relative">
+                <select
+                  [(ngModel)]="currentPage"
+                  (change)="goToPage(currentPage)"
+                  class="appearance-none w-20 pl-3 pr-8 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
+                >
+                  <option
+                    *ngFor="let page of [].constructor(totalPages); let i = index"
+                    [value]="i + 1"
+                  >
+                    Page {{ i + 1 }}
+                  </option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg
+                    class="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+  </div>
+  

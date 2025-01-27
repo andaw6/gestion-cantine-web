@@ -1,0 +1,24 @@
+<div class="px-6 border-b border-gray-200">
+    <nav class="-mb-px flex space-x-6">
+        <button (click)="changeStatus('ALL')" [ngClass]="{'border-green-500 text-green-600': orderStatus === 'ALL', 'text-gray-500 hover:text-gray-700 hover:border-gray-300': orderStatus !== 'ALL'}" 
+            class="border-b-2 px-1 py-4 font-medium text-sm">
+            Toutes les Commandes
+        </button>
+        <button (click)="changeStatus('NEW')"
+            [ngClass]="{'border-green-500 text-green-600': orderStatus === 'NEW', 'text-gray-500 hover:text-gray-700 hover:border-gray-300': orderStatus !== 'NEW'}" 
+            class="border-b-2 px-1 py-4 font-medium text-sm">Nouveaux
+            Commandes</button>
+        <button (click)="changeStatus('PROGRESS')"
+            [ngClass]="{'border-green-500 text-green-600': orderStatus === 'PROGRESS', 'text-gray-500 hover:text-gray-700 hover:border-gray-300': orderStatus !== 'PROGRESS'}" 
+            class="border-b-2 px-1 py-4 font-medium text-sm">Commandes
+            en Attente</button>
+        <button (click)="changeStatus('DONE')"
+            [ngClass]="{'border-green-500 text-green-600': orderStatus === 'DONE', 'text-gray-500 hover:text-gray-700 hover:border-gray-300': orderStatus !== 'DONE'}" 
+            class="border-b-2 px-1 py-4 font-medium text-sm">Commandes
+            Livrées</button>
+        <button (click)="changeStatus('CANCELLED')"
+            [ngClass]="{'border-green-500 text-green-600': orderStatus === 'CANCELLED', 'text-gray-500 hover:text-gray-700 hover:border-gray-300': orderStatus !== 'CANCELLED'}" 
+            class="border-b-2 px-1 py-4 font-medium text-sm">Commandes
+            Annulées</button>
+    </nav>
+</div>

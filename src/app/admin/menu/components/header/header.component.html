@@ -1,0 +1,26 @@
+<div class="flex flex-col gap-4">
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-800">Gestion du Menu</h1>
+        <button (click)="openAddModal()"
+            class="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition-colors flex items-center gap-2">
+            <span class="material-icons">add</span>
+            Ajouter un plat
+        </button>
+    </div>
+
+    <!-- Navigation entre sections -->
+    <div class="flex gap-4 border-b">
+        <button (click)="changeDisplayMode('DAILY')" [class.border-b-2]="displayMode === 'DAILY'"
+            [class.border-green-600]="displayMode === 'DAILY'" class="px-4 py-2 text-gray-700 hover:text-gray-900">
+            Plats du Jour
+        </button>
+        <button (click)="changeDisplayMode('DAILY_MENU')" [class.border-b-2]="displayMode === 'DAILY_MENU'"
+            [class.border-green-600]="displayMode === 'DAILY_MENU'" class="px-4 py-2 text-gray-700 hover:text-gray-900">
+            Menu du Jour
+        </button>
+        <button (click)="changeDisplayMode('REGULAR')" [class.border-b-2]="displayMode === 'REGULAR'"
+            [class.border-green-600]="displayMode === 'REGULAR'" class="px-4 py-2 text-gray-700 hover:text-gray-900">
+            Menu Régulier
+        </button>
+    </div>
+</div>

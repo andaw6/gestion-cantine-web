@@ -1,0 +1,15 @@
+{
+    "watch": [
+        "index.js",
+        "routes/"
+    ],
+    "ext": "js,json",
+    "ignore": [
+        "node_modules/"
+    ],
+    "exec": "node server/index.js",
+    "env": {
+        "NODE_ENV": "development",
+        "PORT": 3000
+    }
+}

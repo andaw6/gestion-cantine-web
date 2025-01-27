@@ -1,0 +1,180 @@
+
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { HeaderComponent } from './components/header/header.component';
+import { DishMode } from '@core/models/types';
+import { DailyDishesComponent } from './components/daily-dishes/daily-dishes.component';
+import { RegularMenuComponent } from './components/regular-menu/regular-menu.component';
+import { CommonModule } from '@angular/common';
+import { DisheFormComponent } from './components/dishe-form/dishe-form.component';
+import { Category, Dish } from '@core/models/dishes.model';
+import { Observable, of } from 'rxjs';
+import { DishesService } from '@core/services/dishes.service';
+import { Router } from '@angular/router';
+import { LoadDataComponent } from '@shared/components/load-data/load-data.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '@shared/components/confirm-dialog/confirm-dialog.component';
+
+
+@Component({
+  selector: 'app-menu',
+  standalone: true,
+  imports: [
+    HeaderComponent,
+    DailyDishesComponent,
+    RegularMenuComponent,
+    DisheFormComponent,
+    LoadDataComponent,
+    CommonModule,
+  ],
+  templateUrl: './menu.component.html',
+  styleUrl: './menu.component.css'
+})
+export class MenuComponent implements OnInit {
+  displayMode: DishMode = (() => {
+    if (typeof window !== 'undefined') {
+      const displayMode = localStorage.getItem("displayMode") as DishMode;
+      if (displayMode) {
+        return displayMode;
+      }
+    }
+    return "DAILY";
+  })();
+  isModalOpen: boolean = false;
+  today = new Date();
+  dishes$!: Observable<Dish[]>;
+  categories$!: Observable<Category[]>;
+  dishes: Dish[] = [];
+  categories: Category[] = [];
+  loading: boolean = true;
+  @ViewChild(DisheFormComponent) dishForm!: DisheFormComponent;
+
+  constructor(
+    private dishService: DishesService,
+    private router: Router,
+    private dialog: MatDialog
+  ) { }
+
+  ngOnInit(): void {
+    this.loading = true;
+    this.dishService.getPlats().subscribe({
+      next: (data) => {
+        this.loading = false;
+        this.dishes$ = of(data);
+      },
+      error: (error) => {
+        console.error("Error get data from api", error);
+        this.loading = false;
+      }
+    });
+
+    this.dishService.getCategory().subscribe({
+      next: (data) => {
+        this.categories$ = of(data);
+      },
+      error: (error) => {
+        console.error("Error get data from api", error);
+      }
+    })
+
+  }
+
+  openConfirmationDialog(id: number): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: { message: 'Êtes-vous sûr de vouloir supprimer ce plat ?', title: "Supprimer un plat" },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Confirmed to delete dish with id:', id);
+        this.dishService.deleteDish(id).subscribe({
+          next: (_) => {
+            if (_) {
+              console.log('Dish deleted successfully');
+              this.dishService.getPlats().subscribe({
+                next: (dt) => {
+                  console.log(dt)
+                }
+              });
+            } else {
+              console.log('Dish not deleted');
+            }
+          }
+        });
+      } else {
+        console.log('Canceled');
+      }
+    });
+  }
+
+
+  setDisplayMode(value: DishMode) {
+    this.displayMode = value;
+    localStorage.setItem("displayMode", value);
+  }
+
+  closeModal = () => this.dishForm.closeModal();
+
+  createDish(dish: Dish) {
+    this.dishForm.startLoader();
+    this.dishService.createOrUpdateDish(dish).subscribe(_ => {
+      this.dishService.getPlats().subscribe({
+        next: (dt) => {
+          this.dishes$ = of(dt);
+          setTimeout(() => {
+            this.dishForm.stopLoader(true, 2000)
+            this.dishForm.closeModal();
+          }, 3000);
+        },
+        error: (error) => {
+          console.error("Error get data from api", error);
+          setTimeout(() => {
+            this.dishForm.stopLoader(false, 2000)
+            this.dishForm.closeModal();
+          }, 3000);
+        }
+      });
+    });
+  }
+
+  getDailyDishes(): Dish[] {
+    let dailyDishes: Dish[] = [];
+    this.dishes$.subscribe(dishes => {
+      dailyDishes = dishes.filter(dish => dish.status === 'DAILY');
+    });
+    return dailyDishes;
+  }
+
+  getRegularDishes(): Dish[] {
+    if (this.dishes.length == 0) {
+      this.dishes$.subscribe(dishes => {
+        this.dishes = dishes.filter(dish => dish.status === 'REGULAR');
+      });
+    }
+    return this.dishes.filter(dish => dish.status === 'REGULAR');
+  }
+
+  getDailyMenu(): Dish[] {
+    let dailyMenu: Dish[] = [];
+    this.dishes$.subscribe(dishes => {
+      dailyMenu = dishes.filter(dish => dish.status === 'DAILY_MENU');
+    });
+    return dailyMenu;
+  }
+
+  getCategorie(): Category[] {
+    try {
+      let categories: Category[] = [];
+      this.categories$.subscribe(categorys => {
+        categories = categorys;
+      });
+      return categories;
+    } catch (_) {
+      return [];
+    }
+  }
+
+
+  showDetailDish(id: number): void {
+    this.router.navigate(['/admin/menu', id]);
+  }
+}

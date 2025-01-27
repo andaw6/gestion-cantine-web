@@ -1,0 +1,9 @@
+<div class="container mx-auto px-4 py-8">
+    <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
+        <app-header [displayMode]="displayMode" (displayModeEmiter)="setDisplayMode($event)"></app-header>
+        <app-stat-grid></app-stat-grid>
+        <app-navigation [orderStatus]="orderStatus"></app-navigation>
+        <app-order-list></app-order-list>
+        <app-pagination [currentPage]="1" [totalPages]="20"></app-pagination>
+    </div>
+</div>

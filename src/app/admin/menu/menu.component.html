@@ -1,0 +1,21 @@
+<app-load-data *ngIf="loading"></app-load-data>
+
+
+<div *ngIf="!loading" class="bg-gray-50 p-6 space-y-6">
+    <app-header [displayMode]="displayMode" (displayModeEmiter)="setDisplayMode($event)"
+        (openModal)="dishForm.openModal()"></app-header>
+
+    <app-daily-dishes (onShowDetail)="showDetailDish($event)" (onDeleteDish)="openConfirmationDialog($event)"
+        (onEditDish)="dishForm.editDish($event)" [dishes]="getFilteredDishes('DAILY')"
+        *ngIf="displayMode === 'DAILY'"></app-daily-dishes>
+
+    <app-regular-menu (onShowDetail)="showDetailDish($event)" (onDeleteDish)="openConfirmationDialog($event)"
+        [categories]="getCategories()" class="space-y-6" [dishes]="getFilteredDishes()" *ngIf="displayMode === 'DAILY_MENU'"
+        (onEditDish)="dishForm.editDish($event)"></app-regular-menu>
+
+    <app-regular-menu (onShowDetail)="showDetailDish($event)" (onDeleteDish)="openConfirmationDialog($event)"
+        [categories]="getCategories()" class="space-y-6" [dishes]="getFilteredDishes()" *ngIf="displayMode === 'REGULAR'"
+        (onEditDish)="dishForm.editDish($event)"></app-regular-menu>
+
+    <app-dishe-form [categories]="getCategories()" (submitForm)="upsertDish($event)"></app-dishe-form>
+</div>

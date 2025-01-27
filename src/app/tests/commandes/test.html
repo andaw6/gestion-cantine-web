@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Responsive Drawer Example</title>  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+    <style>  
+        /* Optional: Add some custom styles for transitions */  
+        .drawer {  
+            transition: transform 0.3s ease;  
+        }  
+    </style>  
+</head>  
+<body class="bg-gray-100 flex h-screen">  
+
+    <!-- Drawer Sidebar -->  
+    <div id="drawer" class="drawer fixed top-0 left-0 h-full w-64 bg-white border-r shadow-lg transform -translate-x-full md:translate-x-0">  
+        <div class="p-4">  
+            <h2 class="text-lg font-bold">Drawer Title</h2>  
+            <ul class="mt-4">  
+                <li class="py-2 hover:bg-gray-200"><a href="#">Item 1</a></li>  
+                <li class="py-2 hover:bg-gray-200"><a href="#">Item 2</a></li>  
+                <li class="py-2 hover:bg-gray-200"><a href="#">Item 3</a></li>  
+                <li class="py-2 hover:bg-gray-200"><a href="#">Item 4</a></li>  
+            </ul>  
+        </div>  
+    </div>  
+
+    <!-- Overlay -->  
+    <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300"></div>  
+
+    <!-- Main Content -->  
+    <div class="flex-1 p-6">  
+        <button id="toggleDrawer" class="bg-blue-500 text-white px-4 py-2 rounded">Toggle Drawer</button>  
+        <h1 class="mt-6 text-2xl">Main Content Area</h1>  
+        <p>This is where your main content goes.</p>  
+    </div>  
+
+    <script>  
+        const drawer = document.getElementById('drawer');  
+        const overlay = document.getElementById('overlay');  
+        const toggleDrawer = document.getElementById('toggleDrawer');  
+
+        toggleDrawer.addEventListener('click', () => {  
+            drawer.classList.toggle('-translate-x-full');  
+            drawer.classList.toggle('translate-x-0');  
+            overlay.classList.toggle('opacity-0');  
+            overlay.classList.toggle('pointer-events-none');  
+        });  
+
+        overlay.addEventListener('click', () => {  
+            drawer.classList.add('-translate-x-full');  
+            drawer.classList.remove('translate-x-0');  
+            overlay.classList.add('opacity-0');  
+            overlay.classList.add('pointer-events-none');  
+        });  
+    </script>  
+</body>  
+</html>

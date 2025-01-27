@@ -1,0 +1,8 @@
+<div class="bg-white rounded-xl shadow p-6">
+    <h2 class="text-xl font-semibold mb-4">Plats du Jour - {{today | date:'longDate'}}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
+        <app-daily-dish-card (edit)="onEditDish.emit($event)" (delete)="onDeleteDish.emit($event)" (toggleDaily)="onShowDetail.emit($event)"
+          class=" group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow
+            duration-300 border border-gray-100" *ngFor="let dish of dishes" [dish]="dish"></app-daily-dish-card>
+    </div>
+</div>  

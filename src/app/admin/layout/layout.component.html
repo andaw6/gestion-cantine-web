@@ -1,0 +1,26 @@
+<div class="flex h-screen bg-gray-50">
+
+    <!-- Sidebar: Ajusté pour les petits écrans avec un comportement dynamique -->
+    <app-sidebar class="w-full overflow-hidden md:w-72 bg-white sm:border-b md:border-b-0 md:border-r shadow-sm md:flex-none flex-grow-0" 
+        [appLogo]="appLogo" [appName]="appName" [user]="user">
+    </app-sidebar>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col min-h-0 overflow-hidden">
+        <app-header  [user]="user" [appName]="appName"></app-header>
+
+        <div class="flex-1 overflow-auto">
+            <!-- Content Wrapper -->
+            <div class="flex flex-col min-h-full">
+                <!-- Main Content -->
+                <div class="flex-1 p-4 md:p-6">
+                    <router-outlet />
+                </div>
+
+                <!-- Footer -->
+                <app-footer [appName]="appName"></app-footer>
+            </div>
+        </div>
+    </main> 
+</div>
+    

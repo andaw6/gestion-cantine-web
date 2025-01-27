@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Couleurs principales */
+    --primary-color: #22C55E;     /* Vert pour les actions principales */
+    --sidebar-bg: #FFFFFF;        /* Fond du sidebar */
+    --main-bg: #1E2533;          /* Fond principal */
+    --header-footer: #111827;    /* Header et footer */
+    
+    /* Textes */
+    --text-primary: #374151;     /* Texte principal */
+    --text-light: #FFFFFF;       /* Texte sur fond foncé */
+    
+    /* États */
+    --hover-state: #22C55E;      /* État hover */
+    --active-state: #16A34A;     /* État actif (version plus foncée du vert) */
+    
+    /* Notifications */
+    --notification-bg: #EF4444;  /* Badge notifications (rouge) */
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

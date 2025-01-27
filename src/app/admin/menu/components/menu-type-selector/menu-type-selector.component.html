@@ -1,0 +1,19 @@
+<div class="flex gap-4 p-4 bg-white rounded-xl shadow-lg max-w-md mx-auto">
+    <button (click)="changeDishType('FOOD')" [ngClass]="{
+        'bg-green-600 text-white shadow-green-200': dishType === 'FOOD',
+        'bg-gray-50 text-gray-700 hover:bg-gray-100': dishType !== 'FOOD'
+      }"
+        class="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-300 hover:shadow-md active:scale-95">
+        <i class="material-icons text-xl">restaurant_menu</i>
+        <span>Nourriture</span>
+    </button>
+
+    <button (click)="changeDishType('DRINK')" [ngClass]="{
+        'bg-green-600 text-white shadow-green-200': dishType === 'DRINK',
+        'bg-gray-50 text-gray-700 hover:bg-gray-100': dishType !== 'DRINK'
+      }"
+        class="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-300 hover:shadow-md active:scale-95">
+        <i class="material-icons text-xl">local_bar</i>
+        <span>Boissons</span>
+    </button>
+</div>
